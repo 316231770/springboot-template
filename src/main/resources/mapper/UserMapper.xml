@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.talkweb.tangjia.springboot_restful_singlemodule.dao.UserMapper">
+  <insert id="insertUser" parameterType="com.talkweb.tangjia.springboot_restful_singlemodule.model.User">
+    insert into users (username, password, age,birth,email)
+    values (
+    #{username},
+    #{password},
+    #{age},
+    #{birth},
+    #{email})
+  </insert>
+  
+  <resultMap type="com.talkweb.tangjia.springboot_restful_singlemodule.model.User" id="userResultMap">
+  	<id property="id" column="id"/>
+  	<result property="username" column="username"/>
+  	<result property="password" column="password"/>
+  	<result property="age" column="age"/>
+  	<result property="birth" column="birth"/>
+  	<result property="email" column="email"/>
+  </resultMap>
+  <select id="selectAllUsers" resultMap="userResultMap">
+  	select * from users
+  </select>
+
+</mapper>
