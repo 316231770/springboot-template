@@ -34,4 +34,12 @@ public class UserController {
     	mv.setViewName("homepage");
     	return mv;
     }
+    
+    @RequestMapping(value = "/", method=RequestMethod.GET)
+    public ModelAndView layout(ModelAndView mv) {
+    	LOG.info("/layout");
+    	mv.addObject("users", userService.findAllUsers());
+    	mv.setViewName("layout");
+    	return mv;
+    }
 }

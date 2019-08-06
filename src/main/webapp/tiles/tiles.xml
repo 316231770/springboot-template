@@ -8,7 +8,7 @@
     <definition name="layout" template="/tiles/basic.jsp">
         <put-attribute name="title" value="Spring Web MVC with Tiles 3" />
         <put-attribute name="header" value="/tiles/header.jsp" />
-        <put-attribute name="body" value="" />
+        <put-attribute name="body" value="/tiles/body.jsp" />
         <put-attribute name="footer" value="/tiles/footer.jsp" />
     </definition>
 

@@ -11,52 +11,11 @@
 	href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css">
 <title>userList</title>
 </head>
-<body>
+<body style="padding-top: 70px;">
 	<!-- jQuery-->
 	<script src="${pageContext.request.contextPath}/jquery/jquery.min.js"></script>
 	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 	<script
 		src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.min.js"></script>
-	<div class="container">
-		<div class="row" style="margin-bottom: 15px">
-		<div class="col-md-4 col-md-offset-5">
-		<h3>
-		用户表单
-		<span class="glyphicon glyphicon-user" aria-hidden="true">
-		</span>
-		
-		</h3>
-		</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<table class="table table-bordered table-striped">
-					<thead>
-						<tr>
-							<th>id</th>
-							<th>username</th>
-							<th>password</th>
-							<th>age</th>
-							<th>birth</th>
-							<th>email</th>
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach items="${users}" var="user">
-							<tr>
-								<td>${user.id}</td>
-								<td>${user.username}</td>
-								<td>${user.password}</td>
-								<td>${user.age}</td>
-								<td><fmt:formatDate value="${user.birth}"
-										pattern="yyyy年MM月dd日" /></td>
-								<td>${user.email}</td>
-							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</div>
 </body>
 </html>
