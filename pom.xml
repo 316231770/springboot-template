@@ -29,6 +29,7 @@
 		</mybatis-spring-boot-starter-version>
 		<flyway.version>5.2.4</flyway.version>
 		<tiles.version>3.0.4</tiles.version>
+		<pagehelper-version>1.2.9</pagehelper-version>
 	</properties>
 
 	<dependencies>
@@ -87,17 +88,25 @@
 			<version>${flyway.version}</version>
 		</dependency>
 		<!-- Add Apache Tiles -->
-        <dependency>
-            <groupId>org.apache.tiles</groupId>
-            <artifactId>tiles-jsp</artifactId>
-            <version>${tiles.version}</version>
-        </dependency>
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-jsp</artifactId>
+			<version>${tiles.version}</version>
+		</dependency>
+
+		<!--分页插件 -->
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper-spring-boot-starter</artifactId>
+			<version>${pagehelper-version}</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
 		<!-- jar包名称 -->
 		<finalName>springboot-mvc-singlemodule</finalName>
-		<!--web资源和静态资源 打包配置-->
+		<!--web资源和静态资源 打包配置 -->
 		<resources>
 			<resource>
 				<directory>src/main/webapp</directory>

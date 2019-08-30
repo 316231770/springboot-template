@@ -24,5 +24,9 @@
   <select id="selectAllUsers" resultMap="userResultMap">
   	select * from users
   </select>
+  
+  <select id="selectUsersByPage" resultMap="userResultMap">
+  	select * from users
+  </select>
 
 </mapper>

@@ -7,11 +7,14 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
+import com.github.pagehelper.Page;
 import com.talkweb.tangjia.springboot_restful_singlemodule.model.User;
+import com.talkweb.tangjia.springboot_restful_singlemodule.service.UserService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = com.talkweb.tangjia.springboot_restful_singlemodule.App.class)
@@ -20,6 +23,10 @@ public class UserMapperTest {
 	
 	@Autowired
 	private UserMapper userMapper;
+	
+	@Autowired
+	@Qualifier("userService")
+	private UserService userService;
 	
 	@Test
 	@Ignore
@@ -35,8 +42,15 @@ public class UserMapperTest {
 	}
 	
 	@Test
+	@Ignore
 	public void selectAllUsersTest() {
 		List<User> users=userMapper.selectAllUsers();
+		System.out.println(users);
+	}
+	
+	@Test
+	public void selectUsersBypageTest() {
+		Page<User> users=userService.findUsersByPage(1, 2);
 		System.out.println(users);
 	}
 	
